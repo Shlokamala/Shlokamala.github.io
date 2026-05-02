@@ -9,31 +9,108 @@
 <style>
 body {
   margin: 0;
-}
-
-/* COVER PAGE */
-.cover {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #2f5d50;
+  background-color: #0b1f3a; /* dark blue */
+  color: white;
+  font-family: Arial, sans-serif;
 }
 
 /* TITLE */
-.cover h1 {
-  color: white;
-  font-size: 60px;
+.header {
+  text-align: center;
+  padding: 30px;
+  font-size: 40px;
+  font-weight: bold;
   font-family: 'Tiro Devanagari Sanskrit', serif;
 }
-</style>
 
+/* SECTION BOX */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 10px;
+}
+
+/* COLLAPSIBLE */
+details {
+  background-color: #132b50;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+summary {
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+}
+
+/* SLOKA TEXT */
+.sloka {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 22px;
+  line-height: 1.8;
+  margin-top: 10px;
+}
+
+/* COLORS */
+.yellow {
+  color: #ffd700;
+}
+
+.green {
+  color: #00ff88;
+}
+
+</style>
 </head>
 
 <body>
 
-<div class="cover">
-  <h1>श्लोकमाला</h1>
+<div class="header">श्लोकमाला</div>
+
+<div class="container">
+
+<details>
+  <summary>ध्यान श्लोक</summary>
+  <p class="sloka yellow">यह श्लोक ध्यानश्लोक से लिया गया है।</p>
+</details>
+
+<details>
+  <summary>बालकाण्ड</summary>
+  <p class="sloka green">यह श्लोक बल्कंद से है।</p>
+</details>
+
+<details>
+  <summary>अयोध्याकाण्ड</summary>
+  <p class="sloka yellow">यह श्लोक अयोध्याकांड से लिया गया है।</p>
+</details>
+
+<details>
+  <summary>अरण्यकाण्ड</summary>
+  <p class="sloka green">यह श्लोक अरण्यकंदम से है</p>
+</details>
+
+<details>
+  <summary>किष्किन्धाकाण्ड</summary>
+  <p class="sloka yellow">यह श्लोक किष्किन्धाकाण्ड से है</p>
+</details>
+
+<details>
+  <summary>सुन्दरकाण्ड</summary>
+  <p class="sloka green">यह श्लोक सुंदरकनाद से लिया गया है।</p>
+</details>
+
+<details>
+  <summary>युद्धकाण्ड</summary>
+  <p class="sloka yellow">यह श्लोक युद्धकांड से लिया गया है।</p>
+</details>
+
+<details>
+  <summary>नित्यानुसन्ध</summary>
+  <p class="sloka green">ये श्लोक नित्यानुसन्ध से हैं</p>
+</details>
+
 </div>
 
 </body>
