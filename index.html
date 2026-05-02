@@ -10,10 +10,20 @@
 body {
   margin: 0;
   background-color: #0b1f3a;
+
+  /* TEXTURE EFFECT */
+  background-image:
+    radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+
+  background-size: 20px 20px, 40px 40px;
+  background-position: 0 0, 10px 10px;
+
   color: white;
   font-family: Arial, sans-serif;
 }
 
+/* HEADER */
 .header {
   text-align: center;
   padding: 30px;
@@ -22,19 +32,23 @@ body {
   font-family: 'Tiro Devanagari Sanskrit', serif;
 }
 
+/* CONTENT */
 .container {
   max-width: 800px;
   margin: auto;
   padding: 10px;
 }
 
+/* COLLAPSIBLE */
 details {
-  background-color: #132b50;
+  background-color: rgba(20, 40, 80, 0.85);
   margin-bottom: 12px;
-  border-radius: 8px;
-  padding: 10px;
+  border-radius: 10px;
+  padding: 12px;
+  backdrop-filter: blur(3px);
 }
 
+/* TITLE */
 summary {
   font-size: 20px;
   cursor: pointer;
@@ -42,6 +56,7 @@ summary {
   font-family: 'Tiro Devanagari Sanskrit', serif;
 }
 
+/* SLOKA */
 .sloka {
   font-family: 'Tiro Devanagari Sanskrit', serif;
   font-size: 22px;
@@ -49,6 +64,7 @@ summary {
   margin-top: 10px;
 }
 
+/* COLORS */
 .yellow {
   color: #ffd700;
 }
