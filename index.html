@@ -5,20 +5,20 @@
 <meta charset="UTF-8">
 <title>Shlokamala</title>
 
-<!-- FONT -->
+<!-- ===== FONT ===== -->
 <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
 
 <style>
 
-/* ===== BODY ===== */
+/* ===== BODY (BACKGROUND + TEXTURE) ===== */
 body {
   margin: 0;
   background-color: #0b1f3a;
 
+  /* subtle texture */
   background-image:
     radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
     radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
-
   background-size: 20px 20px, 40px 40px;
   background-position: 0 0, 10px 10px;
 
@@ -26,7 +26,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* ===== TITLE ===== */
+/* ===== TOP TITLE ===== */
 .header {
   text-align: center;
   padding: 30px;
@@ -34,14 +34,14 @@ body {
   font-family: 'Tiro Devanagari Sanskrit', serif;
 }
 
-/* ===== CONTENT ===== */
+/* ===== MAIN CONTAINER ===== */
 .container {
   max-width: 800px;
   margin: auto;
   padding: 10px;
 }
 
-/* ===== COLLAPSIBLE ===== */
+/* ===== COLLAPSIBLE BOX ===== */
 details {
   background-color: rgba(20, 40, 80, 0.85);
   margin-bottom: 12px;
@@ -49,7 +49,7 @@ details {
   padding: 12px;
 }
 
-/* ===== SECTION NAME ===== */
+/* ===== SECTION HEADER (CLICKABLE) ===== */
 summary {
   font-size: 20px;
   cursor: pointer;
@@ -57,7 +57,7 @@ summary {
   font-family: 'Tiro Devanagari Sanskrit', serif;
 }
 
-/* ===== TITLE INSIDE SECTION (NEW) ===== */
+/* ===== TITLE INSIDE SECTION (CENTERED) ===== */
 .section-title {
   text-align: center;
   font-family: 'Tiro Devanagari Sanskrit', serif;
@@ -66,18 +66,18 @@ summary {
   margin-bottom: 10px;
 }
 
-/* ===== SLOKA ===== */
+/* ===== SLOKA STYLE ===== */
 .sloka {
   font-family: 'Tiro Devanagari Sanskrit', serif;
   font-size: 22px;
   line-height: 1.8;
-  margin-top: 16px;
+  margin-top: 16px; /* space BETWEEN shlokas */
 }
 
-/* ===== COLORS ===== */
+/* ===== COLORS (you can change per line) ===== */
 .yellow { color: #ffd700; }
-.green { color: #00ff88; }
-.white { color: #ffffff; }
+.green  { color: #00ff88; }
+.white  { color: #ffffff; }
 
 </style>
 </head>
@@ -89,39 +89,95 @@ summary {
 
 <div class="container">
 
-  <!-- ===== BALAKANDA SECTION ===== -->
+  <!-- ===== SECTION 1: DHYANA ===== -->
+  <details>
+    <summary>ध्यान श्लोक</summary>
+    <p class="sloka yellow">यह श्लोक ध्यानश्लोक से लिया गया है।</p>
+    <p class="sloka green">यह श्लोक ध्यानश्लोक से लिया गया है।</p>
+  </details>
+
+
+  <!-- ===== SECTION 2: BALAKANDA (UPDATED) ===== -->
   <details>
     <summary>बालकाण्ड</summary>
 
-    <!-- ===== TITLE 1 ===== -->
+    <!-- --- TITLE: मङ्गळाशासनम् --- -->
     <div class="section-title yellow">मङ्गळाशासनम्</div>
 
-    <!-- ===== SLOKA ===== -->
+    <!-- --- SLOKA --- -->
     <p class="sloka white">
       मा निषाद प्रतिष्ठां त्वमगमश्शाश्वतीस्समाः |<br>
       यत्क्रौञ्चमिथुनादेकमवधीः काममोहितम् || 1 || VR 1.2.15 ||
     </p>
 
-    <!-- ===== TITLE 2 ===== -->
+    <!-- --- TITLE: राम जननम् --- -->
     <div class="section-title green">राम जननम्</div>
 
-    <!-- ===== SLOKA 1 ===== -->
+    <!-- --- SLOKA 1 --- -->
     <p class="sloka white">
       ततश्च द्वादशे मासे चैत्रे नावमिके तिथौ |<br>
-      नक्षत्रेsदितिदैवत्ये स्वोच्चसंस्थेषु पंचसु || 2 || VR 1.18.8 ||
+      नक्षत्रेऽदितिदैवत्ये स्वोच्चसंस्थेषु पंचसु || 2 || VR 1.18.8 ||
     </p>
 
-    <!-- ===== SLOKA 2 ===== -->
+    <!-- --- SLOKA 2 --- -->
     <p class="sloka white">
       ग्रहेषु कर्कटे लग्ने वाक्पताविन्दुना सह |<br>
       प्रोद्यमाने जगन्नाथम् सर्वलोकनमस्कृतम् |
     </p>
 
-    <!-- ===== SLOKA 3 ===== -->
+    <!-- --- SLOKA 3 --- -->
     <p class="sloka white">
       कौसल्याजनयद्रामम् सर्वलक्षणसंयुतम् || 3 || VR || 1.18.9-10||
     </p>
 
+  </details>
+
+
+  <!-- ===== SECTION 3: AYODHYAKANDA ===== -->
+  <details>
+    <summary>अयोध्याकाण्ड</summary>
+    <p class="sloka yellow">यह श्लोक अयोध्याकांड से लिया गया है।</p>
+    <p class="sloka green">यह श्लोक अयोध्याकांड से लिया गया है।</p>
+  </details>
+
+
+  <!-- ===== SECTION 4: AARANYAKANDA ===== -->
+  <details>
+    <summary>अरण्यकाण्ड</summary>
+    <p class="sloka green">यह श्लोक अरण्यकंदम से है</p>
+    <p class="sloka yellow">यह श्लोक अरण्यकंदम से है</p>
+  </details>
+
+
+  <!-- ===== SECTION 5: KISHKINDHA ===== -->
+  <details>
+    <summary>किष्किन्धाकाण्ड</summary>
+    <p class="sloka yellow">यह श्लोक किष्किन्धाकाण्ड से है</p>
+    <p class="sloka green">यह श्लोक किष्किन्धाकाण्ड से है</p>
+  </details>
+
+
+  <!-- ===== SECTION 6: SUNDARA ===== -->
+  <details>
+    <summary>सुन्दरकाण्ड</summary>
+    <p class="sloka green">यह श्लोक सुंदरकनाद से लिया गया है।</p>
+    <p class="sloka yellow">यह श्लोक सुंदरकनाद से लिया गया है।</p>
+  </details>
+
+
+  <!-- ===== SECTION 7: YUDDHA ===== -->
+  <details>
+    <summary>युद्धकाण्ड</summary>
+    <p class="sloka yellow">यह श्लोक युद्धकांड से लिया गया है।</p>
+    <p class="sloka green">यह श्लोक युद्धकांड से लिया गया है।</p>
+  </details>
+
+
+  <!-- ===== SECTION 8: NITHYANUSANDHA ===== -->
+  <details>
+    <summary>नित्यानुसन्ध</summary>
+    <p class="sloka green">ये श्लोक नित्यानुसन्ध से हैं</p>
+    <p class="sloka yellow">ये श्लोक नित्यानुसन्ध से हैं</p>
   </details>
 
 </div>
