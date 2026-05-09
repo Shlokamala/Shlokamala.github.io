@@ -3,6 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shlokamala</title>
 
 <!-- ===== FONT ===== -->
@@ -10,71 +11,143 @@
 
 <style>
 
-/* ===== BODY (BACKGROUND + TEXTURE) ===== */
+/* ===== BODY ===== */
 body {
   margin: 0;
-  background-color: #0b1f3a;
-
-  /* subtle texture */
-  background-image:
-    radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 20px 20px, 40px 40px;
-  background-position: 0 0, 10px 10px;
-
+  background-color: #FDF6EC;
   color: white;
   font-family: Arial, sans-serif;
 }
 
-/* ===== TOP TITLE ===== */
-.header {
-  text-align: center;
-  padding: 30px;
-  font-size: 40px;
+/* ===== STICKY TOP BAR ===== */
+.sticky-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #6B1A1A;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.sticky-bar-title {
   font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 18px;
+  color: #FDF6EC;
+  white-space: nowrap;
+}
+
+.sticky-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.sticky-links a {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 13px;
+  color: #FFD87A;
+  text-decoration: none;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.sticky-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* ===== PAGE HEADER (BIG TITLE) ===== */
+.page-header {
+  text-align: center;
+  padding: 36px 20px 8px;
+  background-color: #FDF6EC;
+}
+
+.page-header h1 {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-size: 48px;
+  color: #6B1A1A;
+  margin: 0 0 8px;
+  font-weight: 400;
+}
+
+.header-divider {
+  color: #C8860A;
+  font-size: 18px;
+  letter-spacing: 10px;
+  margin: 0 0 32px;
 }
 
 /* ===== MAIN CONTAINER ===== */
 .container {
-  max-width: 800px;
+  max-width: 780px;
   margin: auto;
-  padding: 10px;
+  padding: 10px 20px 40px;
 }
 
 /* ===== COLLAPSIBLE BOX ===== */
 details {
-  background-color: rgba(20, 40, 80, 0.85);
-  margin-bottom: 12px;
+  background-color: rgba(107, 26, 26, 0.12);
+  margin-bottom: 14px;
   border-radius: 10px;
-  padding: 12px;
+  padding: 14px 16px;
+  border: 1px solid rgba(107, 26, 26, 0.25);
 }
 
 /* ===== SECTION HEADER (CLICKABLE) ===== */
 summary {
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
   font-weight: bold;
   font-family: 'Tiro Devanagari Sanskrit', serif;
+  color: #6B1A1A;
+  padding: 4px 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* ===== TITLE INSIDE SECTION (CENTERED) ===== */
+summary::-webkit-details-marker { display: none; }
+
+summary::before {
+  content: '▶';
+  font-size: 12px;
+  color: #C8860A;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+/* ===== SUBSECTION TITLE (INSIDE SECTION) ===== */
 .section-title {
   text-align: center;
   font-family: 'Tiro Devanagari Sanskrit', serif;
-  font-size: 24px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-top: 24px;
+  margin-bottom: 6px;
+  font-style: italic;
+  letter-spacing: 0.5px;
 }
 
 /* ===== SLOKA STYLE ===== */
 .sloka {
   font-family: 'Tiro Devanagari Sanskrit', serif;
   font-size: 22px;
-  line-height: 1.8;
-  margin-top: 16px;
+  line-height: 1.9;
+  margin-top: 14px;
+  padding-left: 6px;
 }
 
-/* ===== COLORS ===== */
+/* ===== COLORS — KEPT EXACTLY AS ORIGINAL ===== */
 .yellow { color: #ffd700; }
 .green  { color: #00ff88; }
 .white  { color: #ffffff; }
@@ -85,12 +158,32 @@ summary {
 
 <body>
 
-<div class="header">श्लोकमाला</div>
+<!-- ===== STICKY TOP BAR ===== -->
+<div class="sticky-bar">
+  <span class="sticky-bar-title">श्लोकमाला</span>
+  <nav class="sticky-links">
+    <a href="#dhyana">ध्यान श्लोक</a>
+    <a href="#bala">बालकाण्डम्</a>
+    <a href="#ayodhya">अयोध्याकाण्डम्</a>
+    <a href="#aranya">अरण्यकाण्डम्</a>
+    <a href="#kishkindha">किष्किन्धाकाण्डम्</a>
+    <a href="#sundara">सुन्दरकाण्डम्</a>
+    <a href="#yuddha">युद्धकाण्डम्</a>
+    <a href="#ramalalla">राम लल्ला श्लोक</a>
+    <a href="#nitya">नित्यानुसन्धानम्</a>
+  </nav>
+</div>
+
+<!-- ===== BIG TITLE ===== -->
+<div class="page-header">
+  <h1>श्लोकमाला</h1>
+  <div class="header-divider">✦ ✦ ✦</div>
+</div>
 
 <div class="container">
 
   <!-- ===== SECTION 1: DHYANA ===== -->
-  <details>
+  <details id="dhyana">
     <summary>ध्यान श्लोक</summary>
     <p class="sloka yellow">
       जयत्यतिबलो रामो लक्ष्मणश्च महाबलः |<br>
@@ -116,7 +209,7 @@ summary {
 
 
   <!-- ===== SECTION 2: BALAKANDA ===== -->
-  <details>
+  <details id="bala">
     <summary>बालकाण्डम्</summary>
 
     <div class="section-title orange">मङ्गळाशासनम्</div>
@@ -172,7 +265,7 @@ summary {
 
 
   <!-- ===== SECTION 3: AYODHYAKANDA ===== -->
-  <details>
+  <details id="ayodhya">
     <summary>अयोध्याकाण्डम्</summary>
     
     <div class="section-title orange">राम सौन्दर्यम्</div>
@@ -368,11 +461,11 @@ summary {
       भरतः शासनं सर्वं पादुकाभ्यां न्यवेदयत् || 41 || VR 2.115.25 ||
     </p>
     
-    </details>
+  </details>
 
 
   <!-- ===== SECTION 4: AARANYAKANDA ===== -->
-  <details>
+  <details id="aranya">
     <summary>अरण्यकाण्डम्</summary>
 
     <div class="section-title orange">वनवासः</div>
@@ -404,7 +497,7 @@ summary {
       वृक्षैराच्छाद्य चात्मानं किं मां न प्रतिभाषसे || 46 || VR 3.60.26 ||
     </p>
 
-      <div class="section-title orange">रामोन्मादः</div>
+    <div class="section-title orange">रामोन्मादः</div>
 
     <p class="sloka green">
       अस्मिन् मया सार्धमुदारशीला<br>
@@ -417,7 +510,7 @@ summary {
 
 
   <!-- ===== SECTION 5: KISHKINDHA ===== -->
-  <details>
+  <details id="kishkindha">
     <summary>किष्किन्धाकाण्डम्</summary>
 
     <div class="section-title orange">वसन्त माधुर्यम्</div>
@@ -548,7 +641,7 @@ summary {
 
 
   <!-- ===== SECTION 6: SUNDARA ===== -->
-  <details>
+  <details id="sundara">
     <summary>सुन्दरकाण्डम्</summary>
 
     <div class="section-title orange">हनुमद्विलासः</div>
@@ -635,15 +728,15 @@ summary {
 
 
   <!-- ===== SECTION 7: YUDDHA ===== -->
-  <details>
+  <details id="yuddha">
     <summary>युद्धकाण्डम्</summary>
     <p class="sloka yellow">यह श्लोक युद्धकांड से लिया गया है।</p>
     <p class="sloka green">यह श्लोक युद्धकांड से लिया गया है।</p>
   </details>
 
 
-  <!-- ===== NEW SECTION: RAM LALLA SHLOKA ===== -->
-  <details>
+  <!-- ===== SECTION 8: RAM LALLA ===== -->
+  <details id="ramalalla">
     <summary>राम लल्ला श्लोक</summary>
 
     <p class="sloka yellow">
@@ -659,13 +752,11 @@ summary {
       देवं संहननाङ्गमेव मधुरं श्रीजन्मभूमौ स्थितं<br>
       लीलाबालकविग्रहं सुललितं साकेतकेतं भजे ||<br>
     </p>
-
-    
   </details>
 
 
-  <!-- ===== SECTION 8: NITHYANUSANDHA ===== -->
-  <details>
+  <!-- ===== SECTION 9: NITHYANUSANDHA ===== -->
+  <details id="nitya">
     <summary>नित्यानुसन्धानम्</summary>
     
     <p class="sloka yellow">
@@ -676,6 +767,7 @@ summary {
       रामो विग्रहवान् धर्मः |<br>
       रामोपासनेन धर्म वृद्धिः |<br>
       राम तवास्मि ||
+    </p>
   </details>
 
 </div>
